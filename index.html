@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serphi tw ✦ Commission</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+Thai:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0707;
+    --deep: #110d0d;
+    --surface: #1a1212;
+    --card: #1f1616;
+    --border: #3a1f1f;
+    --red: #8b1a1a;
+    --red-bright: #c0392b;
+    --red-glow: #ff2020;
+    --gold: #9a7a3a;
+    --gold-light: #c9a84c;
+    --text: #d4c4b0;
+    --text-dim: #7a6a5a;
+    --white: #f0e8e0;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+background-color: var(–black);
+color: var(–text);
+font-family: ‘Cormorant Garamond’, ‘Noto Sans Thai’, serif;
+overflow-x: hidden;
+cursor: crosshair;
+}
+
+/* Noise texture overlay */
+body::before {
+content: ‘’;
+position: fixed;
+inset: 0;
+background-image: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 200 200’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’ opacity=‘0.04’/%3E%3C/svg%3E”);
+pointer-events: none;
+z-index: 9999;
+opacity: 0.6;
+}
+
+/* Vignette */
+body::after {
+content: ‘’;
+position: fixed;
+inset: 0;
+background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%);
+pointer-events: none;
+z-index: 9998;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(–black); }
+::-webkit-scrollbar-thumb { background: var(–red); border-radius: 2px; }
+
+/* ─── NAVIGATION ─── */
+nav {
+position: fixed;
+top: 0; left: 0; right: 0;
+z-index: 1000;
+display: flex;
+justify-content: center;
+gap: 2px;
+padding: 12px 20px;
+background: linear-gradient(to bottom, rgba(10,7,7,0.98), transparent);
+}
+
+nav a {
+color: var(–text-dim);
+text-decoration: none;
+font-family: ‘Cinzel Decorative’, serif;
+font-size: 0.55rem;
+letter-spacing: 0.15em;
+padding: 6px 12px;
+border: 1px solid transparent;
+transition: all 0.3s;
+text-transform: uppercase;
+}
+
+nav a:hover {
+color: var(–gold-light);
+border-color: var(–border);
+background: rgba(139,26,26,0.1);
+text-shadow: 0 0 10px var(–gold);
+}
+
+/* ─── SECTION BASE ─── */
+section {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 100px 20px 60px;
+position: relative;
+}
+
+/* ─── DECORATIVE DIVIDER ─── */
+.divider {
+display: flex;
+align-items: center;
+gap: 12px;
+margin: 20px auto 40px;
+width: 100%;
+max-width: 500px;
+}
+.divider::before, .divider::after {
+content: ‘’;
+flex: 1;
+height: 1px;
+background: linear-gradient(to right, transparent, var(–border), transparent);
+}
+.divider span {
+color: var(–red);
+font-size: 1rem;
+}
+
+/* ─── SECTION TITLE ─── */
+.section-title {
+font-family: ‘Cinzel Decorative’, serif;
+font-size: clamp(1rem, 3vw, 1.6rem);
+color: var(–white);
+letter-spacing: 0.2em;
+text-align: center;
+text-shadow: 0 0 30px rgba(139,26,26,0.5);
+}
+
+/* ═══════════════════════════════════
+HERO SECTION
+═══════════════════════════════════ */
+#home {
+min-height: 100vh;
+background:
+radial-gradient(ellipse 60% 40% at 50% 60%, rgba(139,26,26,0.12) 0%, transparent 70%),
+radial-gradient(ellipse 40% 60% at 20% 80%, rgba(80,10,10,0.15) 0%, transparent 60%),
+var(–black);
+}
+
+.hero-ornament {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: min(500px, 90vw);
+height: min(500px, 90vw);
+border: 1px solid rgba(139,26,26,0.15);
+border-radius: 50%;
+animation: rotate 30s linear infinite;
+}
+.hero-ornament::before {
+content: ‘’;
+position: absolute;
+inset: 20px;
+border: 1px solid rgba(154,122,58,0.1);
+border-radius: 50%;
+animation: rotate 20s linear infinite reverse;
+}
+.hero-ornament::after {
+content: ‘’;
+position: absolute;
+inset: 40px;
+border: 1px solid rgba(139,26,26,0.08);
+border-radius: 50%;
+}
+
+@keyframes rotate { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+.hero-content {
+position: relative;
+z-index: 1;
+text-align: center;
+}
+
+.hero-status {
+display: inline-block;
+font-family: ‘Cinzel Decorative’, serif;
+font-size: 0.6rem;
+letter-spacing: 0.3em;
+color: var(–text-dim);
+border: 1px solid var(–border);
+padding: 6px 20px;
+margin-bottom: 30px;
+position: relative;
+overflow: hidden;
+}
+
+.status-dot {
+display: inline-block;
+width: 6px; height: 6px;
+border-radius: 50%;
+background: var(–red-glow);
+margin-right: 8px;
+box-shadow: 0 0 8px var(–red-glow);
+animation: pulse-dot 2s infinite;
+}
+.status-dot.open { background: #2ecc71; box-shadow: 0 0 8px #2ecc71; }
+
+@keyframes pulse-dot {
+0%, 100% { opacity: 1; }
+50% { opacity: 0.3; }
+}
+
+.hero-name {
+font-family: ‘Cinzel Decorative’, serif;
+font-size: clamp(2rem, 8vw, 5rem);
+font-weight: 700;
+color: var(–white);
+line-height: 1;
+margin-bottom: 10px;
+text-shadow:
+0 0 40px rgba(139,26,26,0.4),
+0 0 80px rgba(139,26,26,0.2);
+animation: fadeUp 1s ease forwards;
+}
+
+.hero-sub {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: clamp(0.8rem, 2vw, 1.1rem);
+font-style: italic;
+color: var(–gold);
+letter-spacing: 0.3em;
+margin-bottom: 40px;
+animation: fadeUp 1s ease 0.2s both;
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-nav-buttons {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+justify-content: center;
+animation: fadeUp 1s ease 0.4s both;
+}
+
+.btn {
+font-family: ‘Cinzel Decorative’, serif;
+font-size: 0.6rem;
+letter-spacing: 0.15em;
+color: var(–text);
+text-decoration: none;
+border: 1px solid var(–border);
+padding: 10px 24px;
+transition: all 0.3s;
+position: relative;
+overflow: hidden;
+background: transparent;
+cursor: pointer;
+}
+
+.btn::before {
+content: ‘’;
+position: absolute;
+inset: 0;
+background: linear-gradient(135deg, rgba(139,26,26,0.2), transparent);
+opacity: 0;
+transition: opacity 0.3s;
+}
+
+.btn:hover {
+border-color: var(–red);
+color: var(–white);
+text-shadow: 0 0 10px rgba(255,255,255,0.3);
+box-shadow: 0 0 20px rgba(139,26,26,0.3), inset 0 0 20px rgba(139,26,26,0.05);
+}
+.btn:hover::before { opacity: 1; }
+
+.btn-primary {
+background: linear-gradient(135deg, var(–red), rgba(139,26,26,0.7));
+border-color: var(–red-bright);
+color: var(–white);
+}
+
+/* corner decorations */
+.corner-deco {
+position: absolute;
+width: 30px; height: 30px;
+}
+.corner-deco::before, .corner-deco::after {
+content: ‘’;
+position: absolute;
+background: var(–red);
+}
+.corner-deco::before { width: 100%; height: 1px; top: 0; }
+.corner-deco::after { width: 1px; height: 100%; left: 0; top: 0; }
+.corner-deco.tr { top: 0; right: 0; transform: rotate(90deg); }
+.corner-deco.bl { bottom: 0; left: 0; transform: rotate(270deg); }
+.corner-deco.br { bottom: 0; right: 0; transform: rotate(180deg); }
+.corner-deco.tl { top: 0; left: 0; }
+
+/* ═══════════════════════════════════
+ABOUT
+═══════════════════════════════════ */
+#about {
+background:
+radial-gradient(ellipse 50% 50% at 80% 50%, rgba(60,10,10,0.1) 0%, transparent 60%),
+var(–deep);
+}
+
+.about-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+max-width: 800px;
+width: 100%;
+margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+.about-grid { grid-template-columns: 1fr; }
+}
+
+.about-card {
+background: var(–card);
+border: 1px solid var(–border);
+padding: 30px;
+position: relative;
+}
+
+.about-card .corner-deco { opacity: 0.5; }
+
+.about-label {
+font-family: ‘Cinzel Decorative’, serif;
+font-size: 0.55rem;
+letter-spacing: 0.3em;
+color: var(–red);
+text-transform: uppercase;
+margin-bottom: 16px;
+}
+
+.about-text {
+font-size: 1rem;
+line-height: 1.9;
+color: var(–text);
+font-weight: 300;
+}
+
+.about-text strong {
+color: var(–gold-light);
+font-weight: 400;
+}
+
+.skills-list {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+.skills-list li {
+display: flex;
+align-items: center;
+gap: 10px;
+font-size: 0.9rem;
+color: var(–text);
+}
+
+.skills-list li::before {
+content: ‘✦’;
+color: var(–red);
+font-size: 0.6rem;
+flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════
+PRICE LIST
+═══════════════════════════════════ */
+#price {
+background:
+radial-gradient(ellipse 60% 40% at 30% 50%, rgba(80,10,10,0.12) 0%, transparent 60%),
+var(–black);
+}
+
+.price-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 2px;
+max-width: 900px;
+width: 100%;
+margin-top: 20px;
+background: var(–border);
+}
+
+.price-card {
+background: var(–card);
+padding: 30px 24px;
+position: relative;
+transition: all 0.3s;
+}
+
+.price-card:hover {
+background: var(–surface);
+z-index: 1;
+box-shadow: 0 0 30px rgba(139,26,26,0.2);
+}
+
+.price-type {
+font-family: ‘Cinzel Decorative’, serif;
+font-size: 0.65rem;
+letter-spacing: 0.2em;
+color: var(–gold-light);
+margin-bottom: 20px;
+text-transform: uppercase;
+}
+
+.price-row {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+padding: 8px 0;
+border-bottom: 1px solid rgba(58,31,31,0.5);
+font-size: 0.85rem;
+}
+
+.price-row:last-child { border-bottom: none; }
+
+.price-label { color: var(–text-dim); }
+
+.price-amount {
+color: var(–white);
+font-family: ‘Cinzel Decorative’, serif;
+font-size: 0.75rem;
+}
+
+.price-note {
+margin-top: 20px;
+font-size: 0.75rem;
+color: var(–text-dim);
+font-style: italic;
+line-height: 1.6;
+border-top: 1px solid var(–border);
+padding-top: 15px;
+}
+
+.badge {
+display: inline-block;
+background: var(–red);
+color: var(–white);
+font-family: ‘Cinzel Decorative’, serif;
+font-size: 0.45rem;
+letter-spacing: 0.15em;
+padding: 3px 8px;
+margin-left: 8px;
+vertical-align: middle;
+}
+
+/* ═══════════════════════════════════
+TOS
+═══════════════════════════════════ */
+#tos {
+background: var(–deep);
+}
+
+.tos-container {
+max-width: 680px;
+width: 100%;
+background: var(–card);
+border: 1px solid var(–border);
+padding: 40px;
+position: relative;
+margin-top: 20px;
+}
+
+.tos-item {
+display: flex;
+gap: 16px;
+padding: 16px 0;
+border-bottom: 1px solid rgba(58,31,31,0.4);
+align-items: flex-start;
+}
+
+.tos-item:last-child { border-bottom: none; }
+
+.tos-num {
+font-family: ‘Cinzel Decorative’, serif;
+font-size: 0.6rem;
+color: var(–red);
+flex-shrink: 0;
+margin-top: 3px;
+letter-spacing: 0.1em;
+}
+
+.tos-text {
+font-size: 0.95rem;
+line-height: 1.8;
+color: var(–text);
+font-weight: 300;
+}
+
+/* ═══════════════════════════════════
+GALLERY
+═══════════════════════════════════ */
+#gallery {
+background:
+radial-gradient(ellipse 50% 60% at 70% 40%, rgba(60,10,10,0.1) 0%, transparent 60%),
+var(–black);
+}
+
+.gallery-notice {
+max-width: 600px;
+text-align: center;
+font-size: 0.95rem;
+color: var(–text-dim);
+font-style: italic;
+line-height: 1.9;
+margin-top: 10px;
+margin-bottom: 30px;
+}
+
+.gallery-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 3px;
+max-width: 900px;
+width: 100%;
+margin-top: 20px;
+}
+
+@media (max-width: 500px) {
+.gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.gallery-placeholder {
+aspect-ratio: 3/4;
+background: var(–card);
+border: 1px solid var(–border);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 8px;
+transition: all 0.3s;
+cursor: pointer;
+position: relative;
+overflow: hidden;
+}
+
+.gallery-placeholder::before {
+content: ‘’;
+position: absolute;
+inset: 0;
+background: linear-gradient(135deg, rgba(139,26,26,0.05), transparent);
+opacity: 0;
+transition: opacity 0.3s;
+}
+
+.gallery-placeholder:hover {
+border-color: var(–red);
+box-shadow: 0 0 20px rgba(139,26,26,0.2);
+}
+.gallery-placeholder:hover::before { opacity: 1; }
+
+.gallery-icon {
+font-size: 1.5rem;
+opacity: 0.2;
+}
+
+.gallery-label {
+font-family: ‘Cinzel Decorative’, serif;
+font-size: 0.45rem;
+letter-spacing: 0.2em;
+color: var(–text-dim);
+text-transform: uppercase;
+}
+
+.gallery-links {
+display: flex;
+gap: 12px;
+margin-top: 24px;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+/* ═══════════════════════════════════
+QUEUE
+═══════════════════════════════════ */
+#queue {
+background: var(–deep);
+min-height: auto;
+padding: 80px 20px;
+}
+
+.queue-container {
+max-width: 680px;
+width: 100%;
+margin-top: 20px;
+}
+
+.queue-status-bar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: var(–card);
+border: 1px solid var(–border);
+padding: 16px 24px;
+margin-bottom: 2px;
+}
+
+.queue-label {
+font-family: ‘Cinzel Decorative’, serif;
+font-size: 0.6rem;
+letter-spacing: 0.2em;
+color: var(–text-dim);
+text-transform: uppercase;
+}
+
+.queue-value {
+font-family: ‘Cinzel Decorative’, serif;
+font-size: 0.7rem;
+color: var(–gold-light);
+}
+
+.queue-link-btn {
+display: block;
+width: 100%;
+background: var(–card);
+border: 1px solid var(–border);
+padding: 20px 24px;
+text-align: center;
+font-family: ‘Cinzel Decorative’, serif;
+font-size: 0.6rem;
+letter-spacing: 0.2em;
+color: var(–text-dim);
+text-decoration: none;
+transition: all 0.3s;
+margin-top: 12px;
+}
+
+.queue-link-btn:hover {
+border-color: var(–gold);
+color: var(–gold-light);
+background: rgba(154,122,58,0.05);
+}
+
+/* ═══════════════════════════════════
+CONTACT
+═══════════════════════════════════ */
+#contact {
+background:
+radial-gradient(ellipse 50% 50% at 50% 100%, rgba(80,10,10,0.15) 0%, transparent 60%),
+var(–black);
+min-height: auto;
+padding: 80px 20px 120px;
+}
+
+.contact-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+gap: 2px;
+max-width: 700px;
+width: 100%;
+margin-top: 20px;
+background: var(–border);
+}
+
+.contact-card {
+background: var(–card);
+padding: 24px;
+text-align: center;
+text-decoration: none;
+transition: all 0.3s;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 8px;
+}
+
+.contact-card:hover {
+background: var(–surface);
+box-shadow: inset 0 -2px 0 var(–red);
+}
+
+.contact-icon {
+font-size: 1.4rem;
+margin-bottom: 4px;
+filter: grayscale(0.5);
+transition: filter 0.3s;
+}
+
+.contact-card:hover .contact-icon { filter: none; }
+
+.contact-platform {
+font-family: ‘Cinzel Decorative’, serif;
+font-size: 0.55rem;
+letter-spacing: 0.2em;
+color: var(–gold-light);
+text-transform: uppercase;
+}
+
+.contact-handle {
+font-size: 0.8rem;
+color: var(–text-dim);
+}
+
+/* ─── FOOTER ─── */
+footer {
+text-align: center;
+padding: 20px;
+font-size: 0.7rem;
+color: var(–text-dim);
+font-family: ‘Cinzel Decorative’, serif;
+letter-spacing: 0.2em;
+border-top: 1px solid rgba(58,31,31,0.3);
+}
+
+footer span { color: var(–red); }
+
+/* ─── SCROLL INDICATOR ─── */
+.scroll-indicator {
+position: absolute;
+bottom: 30px;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 6px;
+animation: fadeUp 1s ease 0.8s both;
+}
+
+.scroll-indicator span {
+font-family: ‘Cinzel Decorative’, serif;
+font-size: 0.45rem;
+letter-spacing: 0.3em;
+color: var(–text-dim);
+text-transform: uppercase;
+}
+
+.scroll-line {
+width: 1px;
+height: 40px;
+background: linear-gradient(to bottom, var(–red), transparent);
+animation: scroll-line 1.5s ease infinite;
+}
+
+@keyframes scroll-line {
+0% { transform: scaleY(0); transform-origin: top; }
+50% { transform: scaleY(1); transform-origin: top; }
+51% { transform: scaleY(1); transform-origin: bottom; }
+100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ─── BG RUNE (decorative text) ─── */
+.bg-rune {
+position: absolute;
+font-family: ‘Cinzel Decorative’, serif;
+font-size: clamp(5rem, 20vw, 18rem);
+color: rgba(139,26,26,0.03);
+white-space: nowrap;
+user-select: none;
+pointer-events: none;
+letter-spacing: -0.05em;
+}
+
+/* ─── SECTION ENTER ANIMATION ─── */
+.fade-in {
+opacity: 0;
+transform: translateY(30px);
+transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.visible {
+opacity: 1;
+transform: translateY(0);
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <a href="#home">✦ Home</a>
+  <a href="#about">About</a>
+  <a href="#price">Price</a>
+  <a href="#tos">TOS</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#queue">Queue</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+
+<section id="home">
+  <div class="hero-ornament"></div>
+  <div class="bg-rune" style="top:10%; left:-5%; opacity:0.03;">SERPHI</div>
+
+  <div class="hero-content fade-in">
+    <div class="hero-status">
+      <span class="status-dot"></span>
+      <!-- เปลี่ยน CLOSE / OPEN ตามสถานะจริง -->
+      CMS STATUS ⫶ CLOSE
+    </div>
+
+```
+<h1 class="hero-name">Serphi tw</h1>
+<p class="hero-sub">Digital Illustration · Character Design · Commission</p>
+
+<div class="hero-nav-buttons">
+  <a href="#price" class="btn btn-primary">✦ Commission</a>
+  <a href="#gallery" class="btn">Gallery</a>
+  <a href="#queue" class="btn">Queue</a>
+  <a href="#contact" class="btn">Contact</a>
+</div>
+```
+
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+
+<section id="about">
+  <div class="bg-rune" style="bottom:-5%; right:-5%;">ART</div>
+
+  <p class="section-title fade-in">✦ About Me</p>
+  <div class="divider fade-in"><span>✧</span></div>
+
+  <div class="about-grid fade-in">
+    <div class="about-card">
+      <div class="corner-deco tl"></div>
+      <div class="corner-deco br"></div>
+      <div class="about-label">Profile</div>
+      <p class="about-text">
+        สวัสดีครับ ผม <strong>ธเนศ (น้อย)</strong><br>
+        Digital Artist ที่ชื่นชอบงานแนว <strong>Dark Fantasy</strong> และ <strong>Gothic Illustration</strong><br><br>
+        วาดภาพดิจิทัลมากกว่า <strong>1,500 วัน</strong> ผ่านโปรแกรม <strong>Ibispaint</strong> และ <strong>Clip Studio Paint</strong>
+      </p>
+    </div>
+
+```
+<div class="about-card">
+  <div class="corner-deco tl"></div>
+  <div class="corner-deco br"></div>
+  <div class="about-label">Skills</div>
+  <ul class="skills-list">
+    <li>Digital Illustration (Full CG)</li>
+    <li>Character Design / Adoptable</li>
+    <li>Commission Works</li>
+    <li>Ibispaint · Clip Studio Paint</li>
+    <li>Graphic Design / Poster</li>
+    <li>Video Edit (Capcut / TikTok)</li>
+  </ul>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ═══ PRICE ═══ -->
+
+<section id="price">
+  <p class="section-title fade-in">✦ Price List</p>
+  <div class="divider fade-in"><span>✧</span></div>
+
+  <div class="price-grid fade-in">
+
+```
+<div class="price-card">
+  <div class="price-type">Full CG <span class="badge">Personal</span></div>
+  <div class="price-row">
+    <span class="price-label">Bust Shot</span>
+    <span class="price-amount">฿ —</span>
+  </div>
+  <div class="price-row">
+    <span class="price-label">Half Body</span>
+    <span class="price-amount">฿ —</span>
+  </div>
+  <div class="price-row">
+    <span class="price-label">Full Body</span>
+    <span class="price-amount">฿ —</span>
+  </div>
+  <p class="price-note">* ใส่ราคาของคุณเองได้เลยครับ</p>
+</div>
+
+<div class="price-card">
+  <div class="price-type">Full CG <span class="badge" style="background:var(--gold);">Commercial</span></div>
+  <div class="price-row">
+    <span class="price-label">Bust Shot</span>
+    <span class="price-amount">฿ —</span>
+  </div>
+  <div class="price-row">
+    <span class="price-label">Half Body</span>
+    <span class="price-amount">฿ —</span>
+  </div>
+  <div class="price-row">
+    <span class="price-label">Full Body</span>
+    <span class="price-amount">฿ —</span>
+  </div>
+  <p class="price-note">* สำหรับใช้เชิงพาณิชย์</p>
+</div>
+
+<div class="price-card">
+  <div class="price-type">Adoptable / Custom</div>
+  <div class="price-row">
+    <span class="price-label">Design Only</span>
+    <span class="price-amount">฿ —</span>
+  </div>
+  <div class="price-row">
+    <span class="price-label">Full Illust</span>
+    <span class="price-amount">฿ —</span>
+  </div>
+  <div class="price-row">
+    <span class="price-label">Custom Design</span>
+    <span class="price-amount">฿ —</span>
+  </div>
+  <p class="price-note">* ดูรายละเอียดเพิ่มเติมที่ doc</p>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ═══ TOS ═══ -->
+
+<section id="tos">
+  <p class="section-title fade-in">✦ Terms of Service</p>
+  <div class="divider fade-in"><span>✧</span></div>
+
+  <div class="tos-container fade-in">
+    <div class="corner-deco tl"></div>
+    <div class="corner-deco tr"></div>
+    <div class="corner-deco bl"></div>
+    <div class="corner-deco br"></div>
+
+```
+<div class="tos-item">
+  <span class="tos-num">01</span>
+  <p class="tos-text">การเรียงคิวจะเรียงจากคนที่ <strong style="color:var(--gold-light)">ชำระค่ามัดจำก่อน</strong></p>
+</div>
+<div class="tos-item">
+  <span class="tos-num">02</span>
+  <p class="tos-text">เก็บค่ามัดจำ <strong style="color:var(--gold-light)">50%</strong> ก่อนเริ่มงาน และเมื่องานเสร็จสมบูรณ์จึงจ่ายอีก 50% ที่เหลือ</p>
+</div>
+<div class="tos-item">
+  <span class="tos-num">03</span>
+  <p class="tos-text">หากสะดวกสามารถ <strong style="color:var(--gold-light)">ชำระเต็มจำนวน</strong>ได้ตั้งแต่ก่อนเริ่มงาน</p>
+</div>
+<div class="tos-item">
+  <span class="tos-num">04</span>
+  <p class="tos-text">ระยะเวลางาน <strong style="color:var(--gold-light)">1–2 เดือน</strong>ต่อภาพ สามารถสอบถามความคืบหน้าได้เสมอ หากมีการล่าช้าจะแจ้งล่วงหน้า</p>
+</div>
+<div class="tos-item">
+  <span class="tos-num">05</span>
+  <p class="tos-text">รบกวน <strong style="color:var(--red-bright)">ไม่บันทึกภาพของผู้อื่น</strong> โดยไม่ได้รับอนุญาต</p>
+</div>
+<div class="tos-item">
+  <span class="tos-num">06</span>
+  <p class="tos-text">ห้ามนำผลงานไปแก้ไข ดัดแปลง หรือใช้เพื่อการค้าโดยไม่ได้รับอนุญาต</p>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ═══ GALLERY ═══ -->
+
+<section id="gallery">
+  <p class="section-title fade-in">✦ Gallery</p>
+  <div class="divider fade-in"><span>✧</span></div>
+  <p class="gallery-notice fade-in">ผลงาน Digital Illustration · Character Design · Commission Works<br>
+  <em style="font-size:0.8rem; color: var(--text-dim)">* อัปโหลดรูปผลงานของคุณได้เลยครับ</em></p>
+
+  <div class="gallery-grid fade-in">
+    <!-- placeholder slots — ใส่ <img> แทนได้เลย -->
+    <div class="gallery-placeholder">
+      <div class="gallery-icon">🖼</div>
+      <div class="gallery-label">Artwork</div>
+    </div>
+    <div class="gallery-placeholder">
+      <div class="gallery-icon">🖼</div>
+      <div class="gallery-label">Artwork</div>
+    </div>
+    <div class="gallery-placeholder">
+      <div class="gallery-icon">🖼</div>
+      <div class="gallery-label">Artwork</div>
+    </div>
+    <div class="gallery-placeholder">
+      <div class="gallery-icon">🖼</div>
+      <div class="gallery-label">Artwork</div>
+    </div>
+    <div class="gallery-placeholder">
+      <div class="gallery-icon">🖼</div>
+      <div class="gallery-label">Artwork</div>
+    </div>
+    <div class="gallery-placeholder">
+      <div class="gallery-icon">🖼</div>
+      <div class="gallery-label">Artwork</div>
+    </div>
+  </div>
+
+  <div class="gallery-links fade-in">
+    <a href="https://www.tiktok.com/@serphi_tw" target="_blank" class="btn">TikTok ↗</a>
+    <a href="#" target="_blank" class="btn">Facebook ↗</a>
+  </div>
+</section>
+
+<!-- ═══ QUEUE ═══ -->
+
+<section id="queue">
+  <p class="section-title fade-in">✦ Queue</p>
+  <div class="divider fade-in"><span>✧</span></div>
+
+  <div class="queue-container fade-in">
+    <div class="queue-status-bar">
+      <span class="queue-label">สถานะ CMS</span>
+      <span class="queue-value">● Close</span>
+    </div>
+    <div class="queue-status-bar">
+      <span class="queue-label">คิวปัจจุบัน</span>
+      <span class="queue-value">— / —</span>
+    </div>
+    <div class="queue-status-bar">
+      <span class="queue-label">เปิดคิวรอบถัดไป</span>
+      <span class="queue-value">TBA</span>
+    </div>
+
+```
+<!-- ใส่ลิงก์ Google Sheet ของคุณตรงนี้ -->
+<a href="#" target="_blank" class="queue-link-btn">
+  ✦ ดูคิวทั้งหมดใน Google Sheet ↗
+</a>
+```
+
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+
+<section id="contact">
+  <p class="section-title fade-in">✦ Contact</p>
+  <div class="divider fade-in"><span>✧</span></div>
+
+  <div class="contact-grid fade-in">
+    <a href="https://www.facebook.com/serphi.tw" target="_blank" class="contact-card">
+      <div class="contact-icon">📘</div>
+      <div class="contact-platform">Facebook</div>
+      <div class="contact-handle">serphi tw</div>
+    </a>
+    <a href="https://www.tiktok.com/@serphi_tw" target="_blank" class="contact-card">
+      <div class="contact-icon">🎵</div>
+      <div class="contact-platform">TikTok</div>
+      <div class="contact-handle">@serphi_tw</div>
+    </a>
+    <a href="https://line.me/ti/p/thanes_07" target="_blank" class="contact-card">
+      <div class="contact-icon">💬</div>
+      <div class="contact-platform">LINE</div>
+      <div class="contact-handle">thanes_07</div>
+    </a>
+    <a href="mailto:noy0625232694@gmail.com" class="contact-card">
+      <div class="contact-icon">📧</div>
+      <div class="contact-platform">Email</div>
+      <div class="contact-handle">noy0625232694</div>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <span>✦</span> Serphi tw · Digital Artist · 2026 <span>✦</span>
+</footer>
+
+<script>
+  // Intersection Observer for fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Parallax bg runes
+  document.addEventListener('mousemove', (e) => {
+    const runes = document.querySelectorAll('.bg-rune');
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    runes.forEach(r => {
+      r.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  });
+</script>
+
+</body>
+</html>
