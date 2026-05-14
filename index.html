@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="th">
 <head>
 <meta charset="UTF-8">
@@ -8,562 +7,560 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+Thai:wght@300;400;500&display=swap');
 
-:root {
-–black: #0a0707;
-–deep: #110d0d;
-–surface: #1a1212;
-–card: #1f1616;
-–border: #3a1f1f;
-–red: #8b1a1a;
-–red-bright: #c0392b;
-–red-glow: #ff2020;
-–gold: #9a7a3a;
-–gold-light: #c9a84c;
-–text: #d4c4b0;
-–text-dim: #7a6a5a;
-–white: #f0e8e0;
-}
+  :root {
+    --black: #0a0707;
+    --deep: #110d0d;
+    --surface: #1a1212;
+    --card: #1f1616;
+    --border: #3a1f1f;
+    --red: #8b1a1a;
+    --red-bright: #c0392b;
+    --red-glow: #ff2020;
+    --gold: #9a7a3a;
+    --gold-light: #c9a84c;
+    --text: #d4c4b0;
+    --text-dim: #7a6a5a;
+    --white: #f0e8e0;
+  }
 
-- { margin: 0; padding: 0; box-sizing: border-box; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
 
-body {
-background-color: var(–black);
-color: var(–text);
-font-family: ‘Noto Sans Thai’, ‘Cormorant Garamond’, serif;
-overflow-x: hidden;
-cursor: crosshair;
-}
+  body {
+    background-color: var(--black);
+    color: var(--text);
+    font-family: 'Noto Sans Thai', 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+    cursor: crosshair;
+  }
 
-/* Noise texture */
-body::before {
-content: ‘’;
-position: fixed;
-inset: 0;
-background-image: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 200 200’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’ opacity=‘0.04’/%3E%3C/svg%3E”);
-pointer-events: none;
-z-index: 9999;
-opacity: 0.6;
-}
+  /* Noise texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.6;
+  }
 
-/* Vignette */
-body::after {
-content: ‘’;
-position: fixed;
-inset: 0;
-background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%);
-pointer-events: none;
-z-index: 9998;
-}
+  /* Vignette */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%);
+    pointer-events: none;
+    z-index: 9998;
+  }
 
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(–black); }
-::-webkit-scrollbar-thumb { background: var(–red); border-radius: 2px; }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 2px; }
 
-/* ─── NAV ─── */
-nav {
-position: fixed;
-top: 0; left: 0; right: 0;
-z-index: 1000;
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-gap: 2px;
-padding: 12px 20px;
-background: linear-gradient(to bottom, rgba(10,7,7,0.98), transparent);
-}
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2px;
+    padding: 12px 20px;
+    background: linear-gradient(to bottom, rgba(10,7,7,0.98), transparent);
+  }
 
-nav a {
-color: var(–text-dim);
-text-decoration: none;
-font-family: ‘Cinzel Decorative’, cursive;
-font-size: 0.5rem;
-letter-spacing: 0.15em;
-padding: 6px 10px;
-border: 1px solid transparent;
-transition: all 0.3s;
-text-transform: uppercase;
-}
+  nav a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.5rem;
+    letter-spacing: 0.15em;
+    padding: 6px 10px;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    text-transform: uppercase;
+  }
 
-nav a:hover {
-color: var(–gold-light);
-border-color: var(–border);
-background: rgba(139,26,26,0.1);
-}
+  nav a:hover {
+    color: var(--gold-light);
+    border-color: var(--border);
+    background: rgba(139,26,26,0.1);
+  }
 
-/* ─── SECTIONS ─── */
-section {
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding: 100px 20px 60px;
-position: relative;
-}
+  /* ─── SECTIONS ─── */
+  section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px 60px;
+    position: relative;
+  }
 
-.divider {
-display: flex;
-align-items: center;
-gap: 12px;
-margin: 16px auto 36px;
-width: 100%;
-max-width: 500px;
-}
-.divider::before, .divider::after {
-content: ‘’;
-flex: 1;
-height: 1px;
-background: linear-gradient(to right, transparent, var(–border), transparent);
-}
-.divider span { color: var(–red); font-size: 1rem; }
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 16px auto 36px;
+    width: 100%;
+    max-width: 500px;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+  }
+  .divider span { color: var(--red); font-size: 1rem; }
 
-.section-title {
-font-family: ‘Cinzel Decorative’, cursive;
-font-size: clamp(1rem, 3vw, 1.6rem);
-color: var(–white);
-letter-spacing: 0.2em;
-text-align: center;
-text-shadow: 0 0 30px rgba(139,26,26,0.5);
-}
+  .section-title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: clamp(1rem, 3vw, 1.6rem);
+    color: var(--white);
+    letter-spacing: 0.2em;
+    text-align: center;
+    text-shadow: 0 0 30px rgba(139,26,26,0.5);
+  }
 
-/* ─── HERO ─── */
-#home {
-background:
-radial-gradient(ellipse 60% 40% at 50% 60%, rgba(139,26,26,0.12) 0%, transparent 70%),
-radial-gradient(ellipse 40% 60% at 20% 80%, rgba(80,10,10,0.15) 0%, transparent 60%),
-#0a0707;
-}
+  /* ─── HERO ─── */
+  #home {
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 60%, rgba(139,26,26,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(80,10,10,0.15) 0%, transparent 60%),
+      #0a0707;
+  }
 
-.hero-ornament {
-position: absolute;
-top: 50%; left: 50%;
-transform: translate(-50%, -50%);
-width: min(500px, 90vw);
-height: min(500px, 90vw);
-border: 1px solid rgba(139,26,26,0.15);
-border-radius: 50%;
-animation: rotate 30s linear infinite;
-pointer-events: none;
-}
-.hero-ornament::before {
-content: ‘’;
-position: absolute;
-inset: 20px;
-border: 1px solid rgba(154,122,58,0.1);
-border-radius: 50%;
-animation: rotate 20s linear infinite reverse;
-}
-.hero-ornament::after {
-content: ‘’;
-position: absolute;
-inset: 40px;
-border: 1px solid rgba(139,26,26,0.08);
-border-radius: 50%;
-}
-@keyframes rotate { to { transform: translate(-50%, -50%) rotate(360deg); } }
+  .hero-ornament {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(500px, 90vw);
+    height: min(500px, 90vw);
+    border: 1px solid rgba(139,26,26,0.15);
+    border-radius: 50%;
+    animation: rotate 30s linear infinite;
+    pointer-events: none;
+  }
+  .hero-ornament::before {
+    content: '';
+    position: absolute;
+    inset: 20px;
+    border: 1px solid rgba(154,122,58,0.1);
+    border-radius: 50%;
+    animation: rotate 20s linear infinite reverse;
+  }
+  .hero-ornament::after {
+    content: '';
+    position: absolute;
+    inset: 40px;
+    border: 1px solid rgba(139,26,26,0.08);
+    border-radius: 50%;
+  }
+  @keyframes rotate { to { transform: translate(-50%, -50%) rotate(360deg); } }
 
-.hero-content { position: relative; z-index: 1; text-align: center; }
+  .hero-content { position: relative; z-index: 1; text-align: center; }
 
-.hero-status {
-display: inline-block;
-font-family: ‘Cinzel Decorative’, cursive;
-font-size: 0.6rem;
-letter-spacing: 0.3em;
-color: var(–text-dim);
-border: 1px solid var(–border);
-padding: 6px 20px;
-margin-bottom: 30px;
-}
+  .hero-status {
+    display: inline-block;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    padding: 6px 20px;
+    margin-bottom: 30px;
+  }
 
-.status-dot {
-display: inline-block;
-width: 6px; height: 6px;
-border-radius: 50%;
-background: var(–red-glow);
-margin-right: 8px;
-box-shadow: 0 0 8px var(–red-glow);
-animation: pulse-dot 2s infinite;
-}
-.status-dot.open { background: #2ecc71; box-shadow: 0 0 8px #2ecc71; }
-@keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .status-dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--red-glow);
+    margin-right: 8px;
+    box-shadow: 0 0 8px var(--red-glow);
+    animation: pulse-dot 2s infinite;
+  }
+  .status-dot.open { background: #2ecc71; box-shadow: 0 0 8px #2ecc71; }
+  @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
-.hero-name {
-font-family: ‘Cinzel Decorative’, cursive;
-font-size: clamp(2rem, 8vw, 5rem);
-font-weight: 700;
-color: var(–white);
-line-height: 1;
-margin-bottom: 10px;
-text-shadow: 0 0 40px rgba(139,26,26,0.4), 0 0 80px rgba(139,26,26,0.2);
-animation: fadeUp 1s ease forwards;
-}
+  .hero-name {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: clamp(2rem, 8vw, 5rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 10px;
+    text-shadow: 0 0 40px rgba(139,26,26,0.4), 0 0 80px rgba(139,26,26,0.2);
+    animation: fadeUp 1s ease forwards;
+  }
 
-.hero-sub {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: clamp(0.8rem, 2vw, 1.1rem);
-font-style: italic;
-color: var(–gold);
-letter-spacing: 0.3em;
-margin-bottom: 40px;
-animation: fadeUp 1s ease 0.2s both;
-}
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    font-style: italic;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    margin-bottom: 40px;
+    animation: fadeUp 1s ease 0.2s both;
+  }
 
-@keyframes fadeUp {
-from { opacity: 0; transform: translateY(20px); }
-to { opacity: 1; transform: translateY(0); }
-}
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-.hero-nav-buttons {
-display: flex;
-flex-wrap: wrap;
-gap: 10px;
-justify-content: center;
-animation: fadeUp 1s ease 0.4s both;
-}
+  .hero-nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    animation: fadeUp 1s ease 0.4s both;
+  }
 
-.btn {
-font-family: ‘Cinzel Decorative’, cursive;
-font-size: 0.6rem;
-letter-spacing: 0.15em;
-color: var(–text);
-text-decoration: none;
-border: 1px solid var(–border);
-padding: 10px 24px;
-transition: all 0.3s;
-position: relative;
-overflow: hidden;
-background: transparent;
-cursor: pointer;
-}
-.btn:hover {
-border-color: var(–red);
-color: var(–white);
-box-shadow: 0 0 20px rgba(139,26,26,0.3);
-}
-.btn-primary {
-background: linear-gradient(135deg, var(–red), rgba(139,26,26,0.7));
-border-color: var(–red-bright);
-color: var(–white);
-}
+  .btn {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--text);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 10px 24px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    cursor: pointer;
+  }
+  .btn:hover {
+    border-color: var(--red);
+    color: var(--white);
+    box-shadow: 0 0 20px rgba(139,26,26,0.3);
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--red), rgba(139,26,26,0.7));
+    border-color: var(--red-bright);
+    color: var(--white);
+  }
 
-.scroll-indicator {
-position: absolute;
-bottom: 30px; left: 50%;
-transform: translateX(-50%);
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 6px;
-animation: fadeUp 1s ease 0.8s both;
-}
-.scroll-indicator span {
-font-family: ‘Cinzel Decorative’, cursive;
-font-size: 0.45rem;
-letter-spacing: 0.3em;
-color: var(–text-dim);
-text-transform: uppercase;
-}
-.scroll-line {
-width: 1px; height: 40px;
-background: linear-gradient(to bottom, var(–red), transparent);
-animation: scroll-anim 1.5s ease infinite;
-}
-@keyframes scroll-anim {
-0%{transform:scaleY(0);transform-origin:top}
-50%{transform:scaleY(1);transform-origin:top}
-51%{transform:scaleY(1);transform-origin:bottom}
-100%{transform:scaleY(0);transform-origin:bottom}
-}
+  .scroll-indicator {
+    position: absolute;
+    bottom: 30px; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    animation: fadeUp 1s ease 0.8s both;
+  }
+  .scroll-indicator span {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.45rem;
+    letter-spacing: 0.3em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+  .scroll-line {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--red), transparent);
+    animation: scroll-anim 1.5s ease infinite;
+  }
+  @keyframes scroll-anim {
+    0%{transform:scaleY(0);transform-origin:top}
+    50%{transform:scaleY(1);transform-origin:top}
+    51%{transform:scaleY(1);transform-origin:bottom}
+    100%{transform:scaleY(0);transform-origin:bottom}
+  }
 
-/* corner deco */
-.corner-deco { position: absolute; width: 30px; height: 30px; }
-.corner-deco::before, .corner-deco::after { content: ‘’; position: absolute; background: var(–red); }
-.corner-deco::before { width: 100%; height: 1px; top: 0; }
-.corner-deco::after { width: 1px; height: 100%; left: 0; top: 0; }
-.corner-deco.tr { top: 0; right: 0; transform: rotate(90deg); }
-.corner-deco.bl { bottom: 0; left: 0; transform: rotate(270deg); }
-.corner-deco.br { bottom: 0; right: 0; transform: rotate(180deg); }
-.corner-deco.tl { top: 0; left: 0; }
+  /* corner deco */
+  .corner-deco { position: absolute; width: 30px; height: 30px; }
+  .corner-deco::before, .corner-deco::after { content: ''; position: absolute; background: var(--red); }
+  .corner-deco::before { width: 100%; height: 1px; top: 0; }
+  .corner-deco::after { width: 1px; height: 100%; left: 0; top: 0; }
+  .corner-deco.tr { top: 0; right: 0; transform: rotate(90deg); }
+  .corner-deco.bl { bottom: 0; left: 0; transform: rotate(270deg); }
+  .corner-deco.br { bottom: 0; right: 0; transform: rotate(180deg); }
+  .corner-deco.tl { top: 0; left: 0; }
 
-.bg-rune {
-position: absolute;
-font-family: ‘Cinzel Decorative’, cursive;
-font-size: clamp(5rem, 20vw, 18rem);
-color: rgba(139,26,26,0.03);
-white-space: nowrap;
-user-select: none;
-pointer-events: none;
-letter-spacing: -0.05em;
-}
+  .bg-rune {
+    position: absolute;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: clamp(5rem, 20vw, 18rem);
+    color: rgba(139,26,26,0.03);
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: -0.05em;
+  }
 
-/* ─── PRICE ─── */
-#price {
-background:
-radial-gradient(ellipse 60% 40% at 30% 50%, rgba(80,10,10,0.12) 0%, transparent 60%),
-#0a0707;
-}
+  /* ─── PRICE ─── */
+  #price {
+    background:
+      radial-gradient(ellipse 60% 40% at 30% 50%, rgba(80,10,10,0.12) 0%, transparent 60%),
+      #0a0707;
+  }
 
-.price-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-gap: 2px;
-max-width: 960px;
-width: 100%;
-margin-top: 10px;
-background: var(–border);
-}
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2px;
+    max-width: 960px;
+    width: 100%;
+    margin-top: 10px;
+    background: var(--border);
+  }
 
-.price-card {
-background: var(–card);
-padding: 28px 24px;
-transition: all 0.3s;
-position: relative;
-}
-.price-card:hover {
-background: var(–surface);
-box-shadow: 0 0 30px rgba(139,26,26,0.15);
-}
+  .price-card {
+    background: var(--card);
+    padding: 28px 24px;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .price-card:hover {
+    background: var(--surface);
+    box-shadow: 0 0 30px rgba(139,26,26,0.15);
+  }
 
-.price-type {
-font-family: ‘Cinzel Decorative’, cursive;
-font-size: 0.6rem;
-letter-spacing: 0.15em;
-color: var(–gold-light);
-margin-bottom: 18px;
-text-transform: uppercase;
-line-height: 1.6;
-}
+  .price-type {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--gold-light);
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    line-height: 1.6;
+  }
 
-.price-row {
-display: flex;
-justify-content: space-between;
-align-items: baseline;
-padding: 9px 0;
-border-bottom: 1px solid rgba(58,31,31,0.5);
-font-size: 0.88rem;
-}
-.price-row:last-of-type { border-bottom: none; }
-.price-label { color: var(–text-dim); }
-.price-amount {
-color: var(–white);
-font-family: ‘Cinzel Decorative’, cursive;
-font-size: 0.72rem;
-letter-spacing: 0.05em;
-}
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(58,31,31,0.5);
+    font-size: 0.88rem;
+  }
+  .price-row:last-of-type { border-bottom: none; }
+  .price-label { color: var(--text-dim); }
+  .price-amount {
+    color: var(--white);
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+  }
 
-.badge {
-display: inline-block;
-font-family: ‘Cinzel Decorative’, cursive;
-font-size: 0.42rem;
-letter-spacing: 0.1em;
-padding: 2px 7px;
-margin-left: 6px;
-vertical-align: middle;
-}
-.badge-personal { background: var(–red); color: var(–white); }
-.badge-commercial { background: var(–gold); color: #1a1000; }
+  .badge {
+    display: inline-block;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.42rem;
+    letter-spacing: 0.1em;
+    padding: 2px 7px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .badge-personal { background: var(--red); color: var(--white); }
+  .badge-commercial { background: var(--gold); color: #1a1000; }
 
-.price-note {
-margin-top: 14px;
-font-size: 0.72rem;
-color: var(–text-dim);
-font-style: italic;
-line-height: 1.6;
-border-top: 1px solid var(–border);
-padding-top: 12px;
-}
+  .price-note {
+    margin-top: 14px;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    font-style: italic;
+    line-height: 1.6;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+  }
 
-/* ─── TOS ─── */
-#tos { background: #110d0d; }
+  /* ─── TOS ─── */
+  #tos { background: #110d0d; }
 
-.tos-container {
-max-width: 680px;
-width: 100%;
-background: var(–card);
-border: 1px solid var(–border);
-padding: 40px;
-position: relative;
-margin-top: 10px;
-}
+  .tos-container {
+    max-width: 680px;
+    width: 100%;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 40px;
+    position: relative;
+    margin-top: 10px;
+  }
 
-.tos-item {
-display: flex;
-gap: 16px;
-padding: 16px 0;
-border-bottom: 1px solid rgba(58,31,31,0.4);
-align-items: flex-start;
-}
-.tos-item:last-child { border-bottom: none; }
-.tos-num {
-font-family: ‘Cinzel Decorative’, cursive;
-font-size: 0.6rem;
-color: var(–red);
-flex-shrink: 0;
-margin-top: 3px;
-}
-.tos-text { font-size: 0.95rem; line-height: 1.8; color: var(–text); }
+  .tos-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(58,31,31,0.4);
+    align-items: flex-start;
+  }
+  .tos-item:last-child { border-bottom: none; }
+  .tos-num {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.6rem;
+    color: var(--red);
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .tos-text { font-size: 0.95rem; line-height: 1.8; color: var(--text); }
 
-/* ─── GALLERY ─── */
-#gallery {
-background:
-radial-gradient(ellipse 50% 60% at 70% 40%, rgba(60,10,10,0.1) 0%, transparent 60%),
-#0a0707;
-}
+  /* ─── GALLERY ─── */
+  #gallery {
+    background:
+      radial-gradient(ellipse 50% 60% at 70% 40%, rgba(60,10,10,0.1) 0%, transparent 60%),
+      #0a0707;
+  }
 
-.gallery-notice {
-max-width: 600px;
-text-align: center;
-font-size: 0.95rem;
-color: var(–text-dim);
-font-style: italic;
-line-height: 1.9;
-margin-bottom: 20px;
-}
+  .gallery-notice {
+    max-width: 600px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    font-style: italic;
+    line-height: 1.9;
+    margin-bottom: 20px;
+  }
 
-.gallery-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 3px;
-max-width: 900px;
-width: 100%;
-}
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    max-width: 900px;
+    width: 100%;
+  }
 
-@media (max-width: 500px) { .gallery-grid { grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 500px) { .gallery-grid { grid-template-columns: repeat(2,1fr); } }
 
-.gallery-placeholder {
-aspect-ratio: 3/4;
-background: var(–card);
-border: 1px solid var(–border);
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-gap: 8px;
-transition: all 0.3s;
-cursor: pointer;
-}
-.gallery-placeholder:hover {
-border-color: var(–red);
-box-shadow: 0 0 20px rgba(139,26,26,0.2);
-}
-.gallery-icon { font-size: 1.5rem; opacity: 0.2; }
-.gallery-label {
-font-family: ‘Cinzel Decorative’, cursive;
-font-size: 0.45rem;
-letter-spacing: 0.2em;
-color: var(–text-dim);
-text-transform: uppercase;
-}
+  .gallery-placeholder {
+    aspect-ratio: 3/4;
+    background: var(--card);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .gallery-placeholder:hover {
+    border-color: var(--red);
+    box-shadow: 0 0 20px rgba(139,26,26,0.2);
+  }
+  .gallery-icon { font-size: 1.5rem; opacity: 0.2; }
+  .gallery-label {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.45rem;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
 
-.gallery-links { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; justify-content: center; }
+  .gallery-links { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; justify-content: center; }
 
-/* ─── QUEUE ─── */
-#queue { background: #110d0d; min-height: auto; padding: 80px 20px; }
+  /* ─── QUEUE ─── */
+  #queue { background: #110d0d; min-height: auto; padding: 80px 20px; }
 
-.queue-container { max-width: 680px; width: 100%; margin-top: 10px; }
+  .queue-container { max-width: 680px; width: 100%; margin-top: 10px; }
 
-.queue-status-bar {
-display: flex;
-justify-content: space-between;
-align-items: center;
-background: var(–card);
-border: 1px solid var(–border);
-padding: 16px 24px;
-margin-bottom: 2px;
-}
-.queue-label {
-font-family: ‘Cinzel Decorative’, cursive;
-font-size: 0.6rem;
-letter-spacing: 0.2em;
-color: var(–text-dim);
-text-transform: uppercase;
-}
-.queue-value {
-font-family: ‘Cinzel Decorative’, cursive;
-font-size: 0.7rem;
-color: var(–gold-light);
-}
-.queue-link-btn {
-display: block;
-width: 100%;
-background: var(–card);
-border: 1px solid var(–border);
-padding: 20px 24px;
-text-align: center;
-font-family: ‘Cinzel Decorative’, cursive;
-font-size: 0.6rem;
-letter-spacing: 0.2em;
-color: var(–text-dim);
-text-decoration: none;
-transition: all 0.3s;
-margin-top: 12px;
-}
-.queue-link-btn:hover { border-color: var(–gold); color: var(–gold-light); }
+  .queue-status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 16px 24px;
+    margin-bottom: 2px;
+  }
+  .queue-label {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+  .queue-value {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.7rem;
+    color: var(--gold-light);
+  }
+  .queue-link-btn {
+    display: block;
+    width: 100%;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    text-align: center;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: all 0.3s;
+    margin-top: 12px;
+  }
+  .queue-link-btn:hover { border-color: var(--gold); color: var(--gold-light); }
 
-/* ─── CONTACT ─── */
-#contact {
-background:
-radial-gradient(ellipse 50% 50% at 50% 100%, rgba(80,10,10,0.15) 0%, transparent 60%),
-#0a0707;
-min-height: auto;
-padding: 80px 20px 120px;
-}
+  /* ─── CONTACT ─── */
+  #contact {
+    background:
+      radial-gradient(ellipse 50% 50% at 50% 100%, rgba(80,10,10,0.15) 0%, transparent 60%),
+      #0a0707;
+    min-height: auto;
+    padding: 80px 20px 120px;
+  }
 
-.contact-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-gap: 2px;
-max-width: 700px;
-width: 100%;
-margin-top: 10px;
-background: var(–border);
-}
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2px;
+    max-width: 700px;
+    width: 100%;
+    margin-top: 10px;
+    background: var(--border);
+  }
 
-.contact-card {
-background: var(–card);
-padding: 24px;
-text-align: center;
-text-decoration: none;
-transition: all 0.3s;
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 8px;
-}
-.contact-card:hover { background: var(–surface); box-shadow: inset 0 -2px 0 var(–red); }
-.contact-icon { font-size: 1.4rem; }
-.contact-platform {
-font-family: ‘Cinzel Decorative’, cursive;
-font-size: 0.55rem;
-letter-spacing: 0.2em;
-color: var(–gold-light);
-text-transform: uppercase;
-}
-.contact-handle { font-size: 0.8rem; color: var(–text-dim); }
+  .contact-card {
+    background: var(--card);
+    padding: 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .contact-card:hover { background: var(--surface); box-shadow: inset 0 -2px 0 var(--red); }
+  .contact-icon { font-size: 1.4rem; }
+  .contact-platform {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+  }
+  .contact-handle { font-size: 0.8rem; color: var(--text-dim); }
 
-/* ─── FOOTER ─── */
-footer {
-text-align: center;
-padding: 20px;
-font-size: 0.7rem;
-color: var(–text-dim);
-font-family: ‘Cinzel Decorative’, cursive;
-letter-spacing: 0.2em;
-border-top: 1px solid rgba(58,31,31,0.3);
-}
-footer span { color: var(–red); }
+  /* ─── FOOTER ─── */
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    font-family: 'Cinzel Decorative', cursive;
+    letter-spacing: 0.2em;
+    border-top: 1px solid rgba(58,31,31,0.3);
+  }
+  footer span { color: var(--red); }
 
-/* ─── FADE IN ─── */
-.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
+  /* ─── FADE IN ─── */
+  .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
 </style>
-
 </head>
 <body>
 
 <!-- NAV — ลบ About ออกแล้ว -->
-
 <nav>
   <a href="#home">✦ Home</a>
   <a href="#price">Price</a>
@@ -574,7 +571,6 @@ footer span { color: var(–red); }
 </nav>
 
 <!-- ═══ HERO ═══ -->
-
 <section id="home">
   <div class="hero-ornament"></div>
   <div class="bg-rune" style="top:10%;left:-5%;">SERPHI</div>
@@ -601,7 +597,6 @@ footer span { color: var(–red); }
 </section>
 
 <!-- ═══ PRICE ═══ -->
-
 <section id="price">
   <div class="bg-rune" style="bottom:-5%;right:-5%;">PRICE</div>
   <p class="section-title fade-in">✦ Price List</p>
@@ -609,93 +604,90 @@ footer span { color: var(–red); }
 
   <div class="price-grid fade-in">
 
-```
-<!-- Full CG Personal -->
-<div class="price-card">
-  <div class="price-type">
-    Full Render Illustration / Full CG
-    <span class="badge badge-personal">Personal</span>
-  </div>
-  <div class="price-row">
-    <span class="price-label">หัว – อก</span>
-    <span class="price-amount">฿ 600</span>
-  </div>
-  <div class="price-row">
-    <span class="price-label">หัว – เอว</span>
-    <span class="price-amount">฿ 800</span>
-  </div>
-  <div class="price-row">
-    <span class="price-label">หัว – เข่า / เต็มตัว</span>
-    <span class="price-amount">฿ 1,400</span>
-  </div>
-</div>
+    <!-- Full CG Personal -->
+    <div class="price-card">
+      <div class="price-type">
+        Full Render Illustration / Full CG
+        <span class="badge badge-personal">Personal</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">หัว – อก</span>
+        <span class="price-amount">฿ 600</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">หัว – เอว</span>
+        <span class="price-amount">฿ 800</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">หัว – เข่า / เต็มตัว</span>
+        <span class="price-amount">฿ 1,400</span>
+      </div>
+    </div>
 
-<!-- Full CG Commercial -->
-<div class="price-card">
-  <div class="price-type">
-    Full Render Illustration / Full CG
-    <span class="badge badge-commercial">เชิงพาณิชย์</span>
-  </div>
-  <div class="price-row">
-    <span class="price-label">หัว – อก</span>
-    <span class="price-amount">฿ 1,200</span>
-  </div>
-  <div class="price-row">
-    <span class="price-label">หัว – เอว</span>
-    <span class="price-amount">฿ 1,600</span>
-  </div>
-  <div class="price-row">
-    <span class="price-label">หัว – เข่า / เต็มตัว</span>
-    <span class="price-amount">฿ 2,800</span>
-  </div>
-</div>
+    <!-- Full CG Commercial -->
+    <div class="price-card">
+      <div class="price-type">
+        Full Render Illustration / Full CG
+        <span class="badge badge-commercial">เชิงพาณิชย์</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">หัว – อก</span>
+        <span class="price-amount">฿ 1,200</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">หัว – เอว</span>
+        <span class="price-amount">฿ 1,600</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">หัว – เข่า / เต็มตัว</span>
+        <span class="price-amount">฿ 2,800</span>
+      </div>
+    </div>
 
-<!-- No BG Personal -->
-<div class="price-card">
-  <div class="price-type">
-    No / Simple Background
-    <span class="badge badge-personal">Personal</span>
-  </div>
-  <div class="price-row">
-    <span class="price-label">หัว – อก</span>
-    <span class="price-amount">฿ 400</span>
-  </div>
-  <div class="price-row">
-    <span class="price-label">หัว – เอว</span>
-    <span class="price-amount">฿ 600</span>
-  </div>
-  <div class="price-row">
-    <span class="price-label">หัว – เข่า / เต็มตัว</span>
-    <span class="price-amount">฿ 1,000</span>
-  </div>
-</div>
+    <!-- No BG Personal -->
+    <div class="price-card">
+      <div class="price-type">
+        No / Simple Background
+        <span class="badge badge-personal">Personal</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">หัว – อก</span>
+        <span class="price-amount">฿ 400</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">หัว – เอว</span>
+        <span class="price-amount">฿ 600</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">หัว – เข่า / เต็มตัว</span>
+        <span class="price-amount">฿ 1,000</span>
+      </div>
+    </div>
 
-<!-- No BG Commercial -->
-<div class="price-card">
-  <div class="price-type">
-    No / Simple Background
-    <span class="badge badge-commercial">เชิงพาณิชย์</span>
-  </div>
-  <div class="price-row">
-    <span class="price-label">หัว – อก</span>
-    <span class="price-amount">฿ 800</span>
-  </div>
-  <div class="price-row">
-    <span class="price-label">หัว – เอว</span>
-    <span class="price-amount">฿ 1,200</span>
-  </div>
-  <div class="price-row">
-    <span class="price-label">หัว – เข่า / เต็มตัว</span>
-    <span class="price-amount">฿ 2,000</span>
-  </div>
-</div>
-```
+    <!-- No BG Commercial -->
+    <div class="price-card">
+      <div class="price-type">
+        No / Simple Background
+        <span class="badge badge-commercial">เชิงพาณิชย์</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">หัว – อก</span>
+        <span class="price-amount">฿ 800</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">หัว – เอว</span>
+        <span class="price-amount">฿ 1,200</span>
+      </div>
+      <div class="price-row">
+        <span class="price-label">หัว – เข่า / เต็มตัว</span>
+        <span class="price-amount">฿ 2,000</span>
+      </div>
+    </div>
 
   </div>
 </section>
 
 <!-- ═══ TOS ═══ -->
-
 <section id="tos">
   <p class="section-title fade-in">✦ Terms of Service</p>
   <div class="divider fade-in"><span>✧</span></div>
@@ -706,38 +698,34 @@ footer span { color: var(–red); }
     <div class="corner-deco bl"></div>
     <div class="corner-deco br"></div>
 
-```
-<div class="tos-item">
-  <span class="tos-num">01</span>
-  <p class="tos-text">การเรียงคิวจะเรียงจากคนที่ <strong style="color:var(--gold-light)">ชำระค่ามัดจำก่อน</strong></p>
-</div>
-<div class="tos-item">
-  <span class="tos-num">02</span>
-  <p class="tos-text">เก็บค่ามัดจำ <strong style="color:var(--gold-light)">50%</strong> ก่อนเริ่มงาน และเมื่องานเสร็จสมบูรณ์จึงจ่ายอีก 50% ที่เหลือ</p>
-</div>
-<div class="tos-item">
-  <span class="tos-num">03</span>
-  <p class="tos-text">หากสะดวกสามารถ <strong style="color:var(--gold-light)">ชำระเต็มจำนวน</strong>ได้ตั้งแต่ก่อนเริ่มงาน</p>
-</div>
-<div class="tos-item">
-  <span class="tos-num">04</span>
-  <p class="tos-text">ระยะเวลางาน <strong style="color:var(--gold-light)">1–2 เดือน</strong>ต่อภาพ สามารถสอบถามความคืบหน้าได้เสมอ หากมีการล่าช้าจะแจ้งล่วงหน้า</p>
-</div>
-<div class="tos-item">
-  <span class="tos-num">05</span>
-  <p class="tos-text">รบกวน <strong style="color:var(--red-bright)">ไม่บันทึกภาพของผู้อื่น</strong> โดยไม่ได้รับอนุญาต</p>
-</div>
-<div class="tos-item">
-  <span class="tos-num">06</span>
-  <p class="tos-text">ห้ามนำผลงานไปแก้ไข ดัดแปลง หรือใช้เพื่อการค้าโดยไม่ได้รับอนุญาต</p>
-</div>
-```
-
+    <div class="tos-item">
+      <span class="tos-num">01</span>
+      <p class="tos-text">การเรียงคิวจะเรียงจากคนที่ <strong style="color:var(--gold-light)">ชำระค่ามัดจำก่อน</strong></p>
+    </div>
+    <div class="tos-item">
+      <span class="tos-num">02</span>
+      <p class="tos-text">เก็บค่ามัดจำ <strong style="color:var(--gold-light)">50%</strong> ก่อนเริ่มงาน และเมื่องานเสร็จสมบูรณ์จึงจ่ายอีก 50% ที่เหลือ</p>
+    </div>
+    <div class="tos-item">
+      <span class="tos-num">03</span>
+      <p class="tos-text">หากสะดวกสามารถ <strong style="color:var(--gold-light)">ชำระเต็มจำนวน</strong>ได้ตั้งแต่ก่อนเริ่มงาน</p>
+    </div>
+    <div class="tos-item">
+      <span class="tos-num">04</span>
+      <p class="tos-text">ระยะเวลางาน <strong style="color:var(--gold-light)">1–2 เดือน</strong>ต่อภาพ สามารถสอบถามความคืบหน้าได้เสมอ หากมีการล่าช้าจะแจ้งล่วงหน้า</p>
+    </div>
+    <div class="tos-item">
+      <span class="tos-num">05</span>
+      <p class="tos-text">รบกวน <strong style="color:var(--red-bright)">ไม่บันทึกภาพของผู้อื่น</strong> โดยไม่ได้รับอนุญาต</p>
+    </div>
+    <div class="tos-item">
+      <span class="tos-num">06</span>
+      <p class="tos-text">ห้ามนำผลงานไปแก้ไข ดัดแปลง หรือใช้เพื่อการค้าโดยไม่ได้รับอนุญาต</p>
+    </div>
   </div>
 </section>
 
 <!-- ═══ GALLERY ═══ -->
-
 <section id="gallery">
   <p class="section-title fade-in">✦ Gallery</p>
   <div class="divider fade-in"><span>✧</span></div>
@@ -759,7 +747,6 @@ footer span { color: var(–red); }
 </section>
 
 <!-- ═══ QUEUE ═══ -->
-
 <section id="queue">
   <p class="section-title fade-in">✦ Queue</p>
   <div class="divider fade-in"><span>✧</span></div>
@@ -784,7 +771,6 @@ footer span { color: var(–red); }
 </section>
 
 <!-- ═══ CONTACT ═══ -->
-
 <section id="contact">
   <p class="section-title fade-in">✦ Contact</p>
   <div class="divider fade-in"><span>✧</span></div>
@@ -832,6 +818,5 @@ footer span { color: var(–red); }
     runes.forEach(r => r.style.transform = `translate(${x}px, ${y}px)`);
   });
 </script>
-
 </body>
 </html>
